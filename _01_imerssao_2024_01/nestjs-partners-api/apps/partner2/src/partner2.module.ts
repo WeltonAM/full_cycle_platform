@@ -13,6 +13,7 @@ import { AuthModule } from '../../../libs/core/src/auth/auth.module';
     }),
     AuthModule,
     PrismaModule,
+    AuthModule,
     EventosModule,
     LugaresModule,
   ],
