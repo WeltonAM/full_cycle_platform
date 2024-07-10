@@ -1,6 +1,6 @@
-Sistema de Venda de Ingressos - NestJs Partners API
+# Sistema de Venda de Ingressos - NestJs Partners API
 
-Repositório da API feita com Nest.js (Reserva de Ingressos)
+# Repositório da API feita com Nest.js (Reserva de Ingressos)
 
 Para rodar a aplicação:
 

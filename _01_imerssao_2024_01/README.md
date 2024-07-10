@@ -1,5 +1,6 @@
-Sistema de Venda de Ingressos
-Imersão Full Stack && Full Cycle
+# Sistema de Venda de Ingressos
+
+# Imersão Full Stack && Full Cycle
 
 Para rodar a aplicação:
 
