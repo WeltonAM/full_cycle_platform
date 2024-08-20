@@ -5,17 +5,20 @@ import (
 	"net/http"
 	"strconv"
 
-	"gobooks/internal/service"
+	"books/internal/service"
 )
 
+// BookHandlers lida com as requisições HTTP relacionadas a livros.
 type BookHandlers struct {
 	service *service.BookService
 }
 
+// NewBookHandlers cria uma nova instância de BookHandlers.
 func NewBookHandlers(service *service.BookService) *BookHandlers {
 	return &BookHandlers{service: service}
 }
 
+// GetBooks lida com a requisição GET /books.
 func (h *BookHandlers) GetBooks(w http.ResponseWriter, r *http.Request) {
 	books, err := h.service.GetBooks()
 	if err != nil {
@@ -32,6 +35,7 @@ func (h *BookHandlers) GetBooks(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(books)
 }
 
+// CreateBook lida com a requisição POST /books.
 func (h *BookHandlers) CreateBook(w http.ResponseWriter, r *http.Request) {
 	var book service.Book
 	if err := json.NewDecoder(r.Body).Decode(&book); err != nil {
@@ -48,6 +52,7 @@ func (h *BookHandlers) CreateBook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(book)
 }
 
+// GetBookByID lida com a requisição GET /books/{id}.
 func (h *BookHandlers) GetBookByID(w http.ResponseWriter, r *http.Request) {
 	idStr := r.PathValue("id")
 	id, err := strconv.Atoi(idStr)
@@ -70,6 +75,7 @@ func (h *BookHandlers) GetBookByID(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(book)
 }
 
+// UpdateBook lida com a requisição PUT /books/{id}.
 func (h *BookHandlers) UpdateBook(w http.ResponseWriter, r *http.Request) {
 	idStr := r.PathValue("id")
 	id, err := strconv.Atoi(idStr)
@@ -94,6 +100,7 @@ func (h *BookHandlers) UpdateBook(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(book)
 }
 
+// DeleteBook lida com a requisição DELETE /books/{id}.
 func (h *BookHandlers) DeleteBook(w http.ResponseWriter, r *http.Request) {
 	idStr := r.PathValue("id")
 	id, err := strconv.Atoi(idStr)
