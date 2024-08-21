@@ -10,12 +10,12 @@ import (
 	"books/internal/service"
 	"books/internal/web"
 
+	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	// Conexão com o banco de dados SQLite3
-	db, err := sql.Open("sqlite3", "./books.db")
+	db, err := sql.Open("mysql", "./books:books@tcp(HOST:3306)/books") // ALTERAR HOST PARA O HOST DO MYSQL
 	if err != nil {
 		log.Fatalf("failed to connect to the database: %v", err)
 	}
