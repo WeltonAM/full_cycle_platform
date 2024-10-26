@@ -1,7 +1,11 @@
+import React from 'react';
+import Blogs from './components/Blogs';
+import Pagina from './components/Pagina';
+
 export default function Home() {
-  return (
-    <div>
-      EU ANO REACT/NEXT
-    </div>
-  );
+    return (
+        <Pagina>
+          <Blogs />
+        </Pagina>
+    );
 }
