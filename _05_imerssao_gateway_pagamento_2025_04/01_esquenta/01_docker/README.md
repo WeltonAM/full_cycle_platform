@@ -28,8 +28,8 @@ Este projeto é um exercício introdutório para aprender a usar **Docker** e **
 ### 1️⃣ Clonar o Repositório
 
 ```sh
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/WeltonAM/full_cycle_platform/tree/main/_05_imerssao_gateway_pagamento_2025_04/01_esquenta/01_docker
+cd 01_docker
 ```
 
 ### 2️⃣ Subir os Containers
